@@ -13,7 +13,6 @@ class App extends Component {
   }
 
   render () {
-    console.log(this.state.selected)
     return (
       <div className="app">
       <Menu />
