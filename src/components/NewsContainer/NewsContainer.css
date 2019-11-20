@@ -1,0 +1,36 @@
+main {
+  padding: 20px;
+}
+
+.search {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  margin-bottom: 20px;
+  padding: 0px 20px 0px 20px;
+}
+
+.news-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  column-count: 2;
+  overflow: scroll;
+  height: 100vh;
+}
+
+.search-input {
+  width: 40%;
+  border: none;
+  background-color: #141527;
+  font-size: 1.5em;
+}
+
+.search-btn {
+  border-radius: 30px;
+  width: 200px;
+  background-color: rgb(176, 63, 208);
+  color: white;
+  font-size: 1.3em;
+  border: none;
+}
