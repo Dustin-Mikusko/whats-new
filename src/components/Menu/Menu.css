@@ -16,3 +16,12 @@ h2 {
   margin-bottom: 20px;
   font-weight: 400;
 }
+
+.topic {
+  margin-left: 30px;
+}
+
+.topic:hover {
+  cursor:pointer;
+  transform: scale(1.07);
+}
