@@ -1,5 +1,6 @@
 main {
   padding: 20px;
+  height: 100%;
 }
 
 .search {
@@ -21,6 +22,7 @@ main {
 
 .search-input {
   width: 40%;
+  color: white;
   border: none;
   background-color: #141527;
   font-size: 1.5em;
@@ -33,4 +35,13 @@ main {
   color: white;
   font-size: 1.3em;
   border: none;
+}
+
+.search-btn:hover {
+  background-color: rgb(199, 95, 228);
+  cursor: pointer;
+}
+
+.search-btn:active {
+  transform: scale(.97);
 }
