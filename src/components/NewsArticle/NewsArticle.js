@@ -1,5 +1,6 @@
 import React from 'react';
 import './NewsArticle.css';
+import Arrow from '../../images/arrow.png';
 
 const NewsArticle = ({ id, title, description, img, url}) => {
   return (
@@ -10,8 +11,7 @@ const NewsArticle = ({ id, title, description, img, url}) => {
         <p>{description}</p>
       </div>
       <div className="link">
-        <a href={url}>Link To Article</a>
-        <img src="../images/arrow.png"></img>
+        <a href={url}>View Article</a>
       </div>
     </article>
   )
