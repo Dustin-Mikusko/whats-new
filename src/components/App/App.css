@@ -5,7 +5,8 @@
 }
 
 .app {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
   background: #141527;
   height: 100vh;
   text-align: center;
