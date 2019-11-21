@@ -1,6 +1,7 @@
 import React from 'react';
 import './NewsArticle.css';
 
+
 const NewsArticle = ({ title, description, img, url }) => {
   return (
     <article className="article">
