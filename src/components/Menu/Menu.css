@@ -27,11 +27,9 @@ h2 {
 .topic:hover {
   cursor:pointer;
   transform: scale(1.07);
-  background-color: rgb(255, 183, 0);
-  border-radius: 0px 50px 50px 0px;
 }
 
-.topic:focus {
+.active {
   background-color: rgb(255, 183, 0);
   border-radius: 0px 50px 50px 0px;
 }
