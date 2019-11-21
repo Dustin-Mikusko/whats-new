@@ -1,5 +1,5 @@
 .menu {
-  padding: 20px;
+  padding: 20px 0px 0px 20px;
   color: white;
 }
 
@@ -21,6 +21,7 @@ h2 {
 
 .topic {
   margin-left: 30px;
+  width: 225px
 }
 
 .topic:hover {
