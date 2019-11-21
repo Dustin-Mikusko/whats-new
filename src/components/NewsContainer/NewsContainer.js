@@ -1,6 +1,7 @@
 import React from 'react';
 import './NewsContainer.css';
 import NewsArticle from '../NewsArticle/NewsArticle';
+import SearchForm from '../SearchForm/SearchForm';
 
 const NewsContainer = ({ news }) => {
   const newsCards = news.map(article => {
@@ -19,10 +20,7 @@ const NewsContainer = ({ news }) => {
 
   return (
     <main>
-      <section className="search">
-        <input className="search-input" type="text" placeholder="Search for news articles here."></input>
-        <button className="search-btn" type="button">Search Now</button>
-      </section>
+     <SearchForm /> 
       <section className="news-container">
         {newsCards}
       </section>
