@@ -8,13 +8,15 @@
 }
 
 h1 {
-  margin-bottom: 30px;
+  margin-bottom: 60px;
 }
 
 h2 {
   text-align: left;
   margin-bottom: 20px;
   font-weight: 400;
+  height: 70px;
+  padding: 20px 0px 0px 10px;
 }
 
 .topic {
@@ -24,4 +26,11 @@ h2 {
 .topic:hover {
   cursor:pointer;
   transform: scale(1.07);
+  background-color: rgb(255, 183, 0);
+  border-radius: 0px 50px 50px 0px;
+}
+
+.topic:focus {
+  background-color: rgb(255, 183, 0);
+  border-radius: 0px 50px 50px 0px;
 }
