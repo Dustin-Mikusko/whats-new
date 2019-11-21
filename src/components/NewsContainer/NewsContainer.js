@@ -2,9 +2,8 @@ import React from 'react';
 import './NewsContainer.css';
 import NewsArticle from '../NewsArticle/NewsArticle';
 
-const NewsContainer = ({ selected }) => {
-  console.log(selected)
-  const newsCards = selected.map(article => {
+const NewsContainer = ({ news }) => {
+  const newsCards = news.map(article => {
     return (
       <NewsArticle 
         key={article.id}   
