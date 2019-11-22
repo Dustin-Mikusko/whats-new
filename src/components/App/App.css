@@ -12,3 +12,8 @@
   text-align: center;
   width: 100%;
 }
+
+.error {
+  color: red;
+  font-size: 1.4em;
+}
