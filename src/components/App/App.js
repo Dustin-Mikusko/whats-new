@@ -24,6 +24,18 @@ class App extends Component {
     }
   }
 
+  getFilteredNews = (search) => {
+    const filteredNews = this.state.news.filter(article => {
+      return article.headline.includes(search) || article.description.includes(search);
+    });
+    if (filteredNews.length) {
+      this.setState({ news: filteredNews })
+    } else {
+      document.querySelector('.error').innerHTML = `<p>No results found</p>`;
+    }
+    setTimeout(()=> {document.querySelector('.error').innerHTML =''}, 1000);
+  }
+
   changeNews = (selected) => {
     this.setState({ news: this.newsTypes[selected] });
   }
@@ -34,7 +46,9 @@ class App extends Component {
       <Menu 
       newsTypes ={this.newsTypes}
       changeNews={this.changeNews}/>
-      <NewsContainer news={this.state.news}/>
+      <NewsContainer 
+      getFilteredNews={this.getFilteredNews}
+      news={this.state.news}/>
       </div>
     );
   }
