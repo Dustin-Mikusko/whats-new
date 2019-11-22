@@ -19,8 +19,8 @@ const NewsContainer = ({ news }) => {
 
 
   return (
-    <main>
-     <SearchForm /> 
+    <main> 
+      <SearchForm />
       <section className="news-container">
         {newsCards}
       </section>

@@ -8,6 +8,7 @@ import './App.css';
 import Menu from '../Menu/Menu';
 import NewsContainer from '../NewsContainer/NewsContainer';
 
+
 class App extends Component {
   constructor() {
     super();
