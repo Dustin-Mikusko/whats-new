@@ -1,9 +1,25 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import App from './App';
+import { shallow } from 'enzyme';
+import science from '../../data/science';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
-});
+describe('App', () => {
+  let wrapper;
+
+  beforeEach(() => {
+    wrapper = shallow(<App />)
+  });
+
+  it('should match the snapshot with all data passed in correctly', () => {
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should update state with selected news from Menu component', () => {
+
+    wrapper.instance().changeNews('science');
+
+    expect(wrapper.state('news')).toEqual(science);
+
+
+  })
+})
