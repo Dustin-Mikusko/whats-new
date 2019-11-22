@@ -3,7 +3,7 @@ import './NewsContainer.css';
 import NewsArticle from '../NewsArticle/NewsArticle';
 import SearchForm from '../SearchForm/SearchForm';
 
-const NewsContainer = ({ news }) => {
+const NewsContainer = ({ news, getFilteredNews }) => {
   const newsCards = news.map(article => {
     return (
       <NewsArticle 
@@ -20,7 +20,9 @@ const NewsContainer = ({ news }) => {
 
   return (
     <main> 
-      <SearchForm />
+      <SearchForm 
+      getFilteredNews={getFilteredNews}
+      />
       <section className="news-container">
         {newsCards}
       </section>
