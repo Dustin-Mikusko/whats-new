@@ -302,6 +302,7 @@ exports[`App should match the snapshot with all data passed in correctly 1`] = `
     }
   />
   <NewsContainer
+    getFilteredNews={[Function]}
     news={
       Array [
         Object {
