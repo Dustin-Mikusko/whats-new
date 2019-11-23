@@ -4,6 +4,7 @@ import { GoLocation } from 'react-icons/go';
 import { GiGears, GiTicket } from 'react-icons/gi';
 import { FaHeartbeat } from 'react-icons/fa';
 import { GiMicroscope } from 'react-icons/gi';
+import PropTypes from 'prop-types';
 
 class Menu extends Component {
   constructor(props) {
@@ -40,6 +41,10 @@ class Menu extends Component {
     </header>
     )
   }
+}
+
+Menu.propTypes = {
+  changeNews: PropTypes.func
 }
 
 export default Menu;

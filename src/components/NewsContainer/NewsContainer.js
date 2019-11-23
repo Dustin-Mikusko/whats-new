@@ -2,6 +2,7 @@ import React from 'react';
 import './NewsContainer.css';
 import NewsArticle from '../NewsArticle/NewsArticle';
 import SearchForm from '../SearchForm/SearchForm';
+import PropTypes from 'prop-types';
 
 const NewsContainer = ({ news, getFilteredNews }) => {
   const newsCards = news.map(article => {
@@ -28,6 +29,11 @@ const NewsContainer = ({ news, getFilteredNews }) => {
       </section>
     </main>
   )
+}
+
+NewsContainer.propTypes = {
+  news: PropTypes.array,
+  getFilteredNews: PropTypes.func
 }
 
 export default NewsContainer;
