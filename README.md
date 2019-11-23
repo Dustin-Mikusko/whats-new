@@ -11,5 +11,10 @@ What's New is an app built with React that displays news articles for various to
 
 ## Goals
 
-* Yes
-* Yes
+* Learn to pass information bewtween React components using props.
+* Learn to write readable JSX
+* Learn how to unit test React components including snapshot testing, methods, and changes in state
+
+## What's New in Action
+
+
