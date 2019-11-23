@@ -8,8 +8,7 @@ class SearchForm extends Component {
 
   submitSearch = () => {
     const { getFilteredNews } = this.props;
-    var searchItem = document.querySelector('.search-input');
-    console.log(searchItem);
+    let searchItem = document.querySelector('.search-input');
     if (searchItem.value.length) {
       getFilteredNews(searchItem.value);
     } else {

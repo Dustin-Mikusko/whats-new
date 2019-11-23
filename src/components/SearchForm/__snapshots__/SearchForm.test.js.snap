@@ -9,8 +9,12 @@ exports[`SearchForm should match the snapshot with the correct data 1`] = `
     placeholder="Search for news articles here."
     type="text"
   />
+  <div
+    className="error"
+  />
   <button
     className="search-btn"
+    onClick={[Function]}
     type="button"
   >
     Search Now
