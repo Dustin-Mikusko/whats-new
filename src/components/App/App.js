@@ -1,35 +1,38 @@
 import React, { Component } from 'react';
-import local from '../../data/local';
-import entertainment from '../../data/entertainment';
-import health from '../../data/health';
-import science from '../../data/science';
-import technology from '../../data/technology';
 import './App.css';
 import Menu from '../Menu/Menu';
 import NewsContainer from '../NewsContainer/NewsContainer';
+import { getNews } from '../../apiCalls';
 
 
 class App extends Component {
   constructor() {
-    super();
-    this.newsTypes = {
-      local: [...local],
-      science: [...science],
-      entertainment: [...entertainment],
-      health: [...health],
-      technology: [...technology]
-    }
+    super(); 
     this.state = {
-      news: local  
+      newsTypes: null,
+      currentNews: null,
+      error: '',
+      isLoading: true  
+    }
+  }
+
+  async componentDidMount() {
+    try {
+      const news = await getNews();
+      this.setState({ newsTypes: news });
+      this.setState ({ currentNews: news.local })
+      this.setState({ isLoading: false });
+    } catch ({ message }) {
+      this.setState({ error: message })
     }
   }
 
   getFilteredNews = (search) => {
-    const filteredNews = this.state.news.filter(article => {
+    const filteredNews = this.state.currentNews.filter(article => {
       return article.headline.includes(search) || article.description.includes(search);
-    });
+    }); 
     if (filteredNews.length) {
-      this.setState({ news: filteredNews })
+      this.setState({ currentNews: filteredNews })
     } else {
       document.querySelector('.error').innerHTML = `<p>No results found</p>`;
     }
@@ -37,20 +40,26 @@ class App extends Component {
   }
 
   changeNews = (selected) => {
-    this.setState({ news: this.newsTypes[selected] });
+    this.setState({ currentNews: this.state.newsTypes[selected] });
   }
 
   render () {
-    return (
-      <div className="app">
-      <Menu 
-      newsTypes ={this.newsTypes}
-      changeNews={this.changeNews}/>
-      <NewsContainer 
-      getFilteredNews={this.getFilteredNews}
-      news={this.state.news}/>
-      </div>
-    );
+    if (this.state.isLoading) {
+      return (
+        <h1>Gathering News...</h1>
+      )
+    } else {
+      return (
+        <div className="app">
+        <Menu 
+        newsTypes ={this.newsTypes}
+        changeNews={this.changeNews}/>
+        <NewsContainer 
+        getFilteredNews={this.getFilteredNews}
+        news={this.state.currentNews}/>
+        </div>
+      );
+    }
   }
 }
 
